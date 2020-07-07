@@ -9,7 +9,13 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json());
 
 app.get('/webhook', (req, res) => {
-    res.send({mensagem: 'Ola mundo'})
+    res.send('Ola mundo')
+})
+
+app.post('/webhook', (req, res) => {
+    var data = req.body;
+    res.send(data);
+    console.log(data)
 })
 
 app.listen(port, () => {
